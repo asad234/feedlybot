@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import MarketingPages from '@/components/DashboardEmail';
-import Dashboard from '@/components/DashboardOverview';
 import FeedbackWidget from '@/components/FeedbackWidget';
 import { WidgetSettings } from './types';
+import DashboardOverview from '@/components/DashboardOverview';
+import DashboardEmail from '@/pages/dashboard/DashboardEmail';
 
 const App: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -28,9 +28,9 @@ const App: React.FC = () => {
   return (
     <div className="bg-gray-50 min-h-screen font-sans">
       {isLoggedIn ? (
-        <Dashboard onLogout={handleLogout} />
+        <DashboardOverview/>
       ) : (
-        <MarketingPages onLogin={handleLogin} />
+        <DashboardEmail/>
       )}
       {/* The FeedbackWidget is placed here to be persistent across all pages */}
       <FeedbackWidget settings={defaultWidgetSettings} />

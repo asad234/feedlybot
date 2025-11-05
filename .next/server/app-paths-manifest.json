@@ -2,7 +2,6 @@
   "/pricing/page": "app/pricing/page.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/dashboard/settings/page": "app/dashboard/settings/page.js",
-  "/dashboard/feedback/page": "app/dashboard/feedback/page.js",
   "/dashboard/email/page": "app/dashboard/email/page.js",
-  "/dashboard/widget-editor/page": "app/dashboard/widget-editor/page.js"
+  "/dashboard/feedback/page": "app/dashboard/feedback/page.js"
 }
