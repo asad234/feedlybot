@@ -1,6 +1,10 @@
 import React from 'react';
 import { FeedbackSubmission } from '@/types';
 
+interface DashboardOverviewProps {
+  onLogout: () => void;
+}
+
 const StatCard = ({ title, value, change, icon }: { title: string, value: string, change: string, icon: React.ReactNode }) => (
     <div className="bg-white p-6 rounded-lg shadow">
         <div className="flex items-start justify-between">
@@ -16,6 +20,7 @@ const StatCard = ({ title, value, change, icon }: { title: string, value: string
     </div>
 );
 
+
 const mockRecentFeedback: FeedbackSubmission[] = [
     { id: 1, rating: 9, perfect10: "The onboarding was seamless!", changeRemove: "Nothing, it was great.", date: "2024-07-29", email: "user1@example.com" },
     { id: 2, rating: 5, perfect10: "Faster loading times.", changeRemove: "The dashboard is a bit confusing.", date: "2024-07-29", email: "user2@example.com" },
@@ -29,7 +34,7 @@ const mockRatingData = [
 ];
 
 
-const DashboardOverview: React.FC = () => {
+const DashboardOverview: React.FC<DashboardOverviewProps> = ({ onLogout }) => {
     const totalResponses = mockRatingData.reduce((sum, item) => sum + item.count, 0);
     const maxCount = Math.max(...mockRatingData.map(d => d.count));
 

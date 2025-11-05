@@ -1,5 +1,9 @@
 import DashboardEmail from "@/components/DashboardEmail";
 
-export default function EmailPage() {
-    return <DashboardEmail />
+interface EmailPageProps {
+  onLogin: () => void;
+}
+
+export default function EmailPage({ onLogin }: EmailPageProps) {
+    return <DashboardEmail onLogin={onLogin} />;
 }

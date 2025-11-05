@@ -1,5 +1,10 @@
+import React from "react";
 import DashboardOverview from "@/components/DashboardOverview";
 
-export default function Dashboard() {
-  return <DashboardOverview />;
+interface DashboardProps {
+  onLogout: () => void;
+}
+
+export default function Dashboard({ onLogout }: DashboardProps) {
+  return <DashboardOverview onLogout={onLogout} />;
 }

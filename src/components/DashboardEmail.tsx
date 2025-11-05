@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import { generateEmail } from '@/lib/geminiService';
 import ConfirmationDialog from '@/components/ConfirmationDialog';
 
+interface DashboardEmailProps {
+  onLogin: () => void;
+}
+
 const mockSubscribers = [
   "zara.day@example.com",
   "john.doe@example.com",
@@ -14,7 +18,7 @@ const mockSubscribers = [
   "frank.black@example.com",
 ];
 
-const DashboardEmail: React.FC = () => {
+const DashboardEmail: React.FC<DashboardEmailProps> = ({ onLogin }) =>{
     const [selectedEmails, setSelectedEmails] = useState<string[]>([]);
     const [subject, setSubject] = useState('');
     const [body, setBody] = useState('');
