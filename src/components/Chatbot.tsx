@@ -2,8 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { askGemini } from '@/lib/geminiService';
 import { type ChatMessage } from '../types';
-import ChatIcon from './icons/ChatIcon';
-import CloseIcon from './icons/CloseIcon';
+import { MessageCircle, X } from 'lucide-react';
 
 type MessageBubbleProps = {
   msg: ChatMessage;
@@ -80,7 +79,8 @@ const Chatbot: React.FC = () => {
         className="fixed bottom-6 right-6 bg-blue-600 text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-transform transform hover:scale-110 z-50"
         aria-label="Toggle Chat"
       >
-        {isOpen ? <CloseIcon /> : <ChatIcon />}
+        {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
+
       </button>
 
       {isOpen && (
